@@ -7,9 +7,7 @@ module.exports = {
         white: "#FFFFFF",
         black: "#0D0D0D"
       },
-      fontFamily: {
-        sans: ['"Open Sans"', "sans-serif"]
-      }
+      
     },
   },
   plugins: [],
