@@ -9,24 +9,24 @@ const Navbar = () => {
 
   return (
     <nav className="bg-black text-white p-4 fixed w-full top-0 z-50 interFont">
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="hero container mx-auto flex justify-between items-center">
         {/* Logo o nombre */}
-        <div className="text-lg font-bold">FCG</div>
+        <div className="text-xl font-black bg-gradient-to-r from-pink-600 to-purple-500 bg-clip-text text-transparent">FCG</div>
 
         {/* Menú en pantallas grandes */}
-        <ul className="hidden md:flex space-x-6">
+        <ul className="font-medium hidden md:flex space-x-6">
           <li>
-            <a href="#projects" className="hover:text-gray-300">
+            <a href="#projects" className=" text-white hover:font-extrabold">
               PROJECTS
             </a>
           </li>
           <li>
-            <a href="path/to/cv.pdf" target="_blank" className="hover:text-gray-300">
+            <a href="path/to/cv.pdf" target="_blank" className="hover:font-extrabold">
               RESUME
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/tu-perfil" target="_blank" className="hover:text-gray-300">
+            <a href="https://www.linkedin.com/in/tu-perfil" target="_blank" className="hover:font-extrabold" rel="noreferrer">
               LINKEDIN
             </a>
           </li>
@@ -77,17 +77,17 @@ const Navbar = () => {
         <div className="md:hidden absolute top-full left-0 w-full bg-black text-white shadow-lg">
           <ul className="flex flex-col items-center space-y-4 py-4">
             <li>
-              <a href="#projects" className="text-lg hover:text-gray-300">
+              <a href="#projects" className="text-lg hover:font-extrabold">
                 PROJECTS
               </a>
             </li>
             <li>
-              <a href="path/to/cv.pdf" target="_blank" className="text-lg hover:text-gray-300">
+              <a href="path/to/cv.pdf" target="_blank" className="text-lg hover:font-extrabold">
                 RESUME
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/tu-perfil" target="_blank" className="text-lg hover:text-gray-300">
+              <a href="https://www.linkedin.com/in/tu-perfil" target="_blank" className="text-lg hover:font-extrabold" rel="noreferrer">
                 LINKEDIN
               </a>
             </li>

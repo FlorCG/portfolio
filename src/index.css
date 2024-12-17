@@ -16,6 +16,7 @@ code {
 @tailwind components;
 @tailwind utilities;
 
+
 .interFont {
   font-family: "Inter", serif;
   font-optical-sizing: auto;
@@ -23,15 +24,37 @@ code {
   font-style: normal;
 }
 
+
+
+
 .container, .hero {
   max-width: 1228px;
 }
 
-img {
-  max-width: fit-content;
+@media (min-width: 1300px) {
+  .hero {
+    padding: 0;
+  }
+  
 }
 
-.hero {
+
+
+.ticker-content {
   display: flex;
-  justify-content: space-between;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
 }
