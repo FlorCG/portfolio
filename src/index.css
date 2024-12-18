@@ -16,6 +16,9 @@ code {
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
 
 .interFont {
   font-family: "Inter", serif;

@@ -23,7 +23,7 @@ const Ticker = () => {
   const repeatedWords = [...words, ...words];
 
   return (
-    <div className="relative overflow-hidden bg-black py-4">
+    <div className="relative overflow-hidden bg-black pb-16 pt-4" >
     {/* Gradiente para efecto de desvanecimiento */}
     <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-black via-transparent to-black z-10"></div>
 
@@ -32,7 +32,7 @@ const Ticker = () => {
       {/* Primer contenedor de las palabras */}
       <div className="ticker-content flex animate-marquee">
         {repeatedWords.map((word, index) => (
-            <span key={index} className="text-white text-lg  mx-3 flex-shrink-0">
+            <span key={index} className="text-white text-lg interFont mx-3 flex-shrink-0">
             {/* Aquí se incorpora el icono de chispa entre las palabras */}
             {index % 2 === 0 ? (
               <>

@@ -1,32 +1,55 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+
 
 const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // Detectar el scroll para ajustar la clase de la navbar
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="bg-black text-white p-4 fixed w-full top-0 z-50 interFont">
-      <div className="hero container mx-auto flex justify-between items-center">
-        {/* Logo o nombre */}
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-black/80 backdrop-blur-md text-white py-5 "
+          : "bg-black text-white py-6"
+      }`}
+    >
+      <div className="container mx-auto flex justify-between items-center px-6">
+        {/* Logo */}
         <div className="text-xl font-black bg-gradient-to-r from-pink-600 to-purple-500 bg-clip-text text-transparent">FCG</div>
 
-        {/* Menú en pantallas grandes */}
-        <ul className="font-medium hidden md:flex space-x-6">
+          {/* Menú en pantallas grandes */}
+          <ul className="font-medium text-lg hidden md:flex space-x-8">
           <li>
-            <a href="#projects" className=" text-white hover:font-extrabold">
+            <a href="#projects" className=" text-white hover:text-purple-600">
               PROJECTS
             </a>
           </li>
           <li>
-            <a href="path/to/cv.pdf" target="_blank" className="hover:font-extrabold">
+            <a href="path/to/cv.pdf" target="_blank" className="hover:text-purple-600">
               RESUME
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/tu-perfil" target="_blank" className="hover:font-extrabold" rel="noreferrer">
+            <a href="https://www.linkedin.com/in/tu-perfil" target="_blank" className="hover:text-purple-600" rel="noreferrer">
               LINKEDIN
             </a>
           </li>
@@ -74,20 +97,20 @@ const Navbar = () => {
 
       {/* Menú desplegable para pantallas pequeñas */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-black text-white shadow-lg">
+        <div className="md:hidden absolute top-full left-0 w-full  bg-black/90 backdrop-blur-md  text-white shadow-lg">
           <ul className="flex flex-col items-center space-y-4 py-4">
             <li>
-              <a href="#projects" className="text-lg hover:font-extrabold">
+              <a href="#projects" className="font-medium py-6 text-lg hover:text-purple-600">
                 PROJECTS
               </a>
             </li>
             <li>
-              <a href="path/to/cv.pdf" target="_blank" className="text-lg hover:font-extrabold">
+              <a href="path/to/cv.pdf" target="_blank" className="font-medium text-lg py-6 hover:text-purple-600">
                 RESUME
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/tu-perfil" target="_blank" className="text-lg hover:font-extrabold" rel="noreferrer">
+              <a href="https://www.linkedin.com/in/tu-perfil" target="_blank" className="font-medium text-lg py-6 hover:text-purple-600" rel="noreferrer">
                 LINKEDIN
               </a>
             </li>
@@ -95,8 +118,7 @@ const Navbar = () => {
         </div>
       )}
     </nav>
+    
   );
 };
-
 export default Navbar;
-
