@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 
 
 const Navbar = () => {
+
+ 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -53,8 +55,10 @@ const Navbar = () => {
               LINKEDIN
             </a>
           </li>
+      
         </ul>
-
+        
+       
         {/* Botón del menú hamburguesa */}
         <button
           className="md:hidden focus:outline-none"
@@ -118,6 +122,7 @@ const Navbar = () => {
         </div>
       )}
     </nav>
+    
     
   );
 };
